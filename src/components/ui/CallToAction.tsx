@@ -11,33 +11,33 @@ export function CallToAction() {
             id="cta-title"
             className="scroll-my-60 text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl"
           >
-            Ready to get started?
+            Ready to park smarter?
           </h2>
           <p className="mt-3 mb-8 text-lg text-gray-600">
-            Begin your smart farming journey today or talk to our agronomists
-            about your specific needs.
+            Get started with ParkX today or talk to our team about setting up
+            your facility.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild className="text-md">
-              <Link href="#">Start now</Link>
+              <Link href="#">Reserve a Spot</Link>
             </Button>
             <Button asChild className="text-md" variant="secondary">
-              <Link href="#">Find nearest dealer</Link>
+              <Link href="#">Contact Sales</Link>
             </Button>
           </div>
         </div>
         <div className="relative isolate rounded-xl sm:col-span-4 sm:h-full">
           <Image
             aria-hidden
-            alt="Farm with vehicles"
-            src="/images/farm-footer.webp"
+            alt="Modern parking facility"
+            src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=1000&q=80"
             height={1000}
             width={1000}
             className="absolute inset-0 -z-10 rounded-2xl blur-xl"
           />
           <Image
-            alt="Farm with vehicles"
-            src="/images/farm-footer.webp"
+            alt="Modern parking facility"
+            src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=1000&q=80"
             height={1000}
             width={1000}
             className="relative z-10 rounded-2xl"

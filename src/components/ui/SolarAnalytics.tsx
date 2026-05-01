@@ -17,13 +17,13 @@ export function SolarAnalytics() {
       <div>
         <h2
           id="solar-analytics"
-          className="relative scroll-my-24 text-lg font-semibold tracking-tight text-orange-500"
+          className="relative scroll-my-24 text-lg font-semibold tracking-tight text-green-500"
         >
-          Solar Analytics
-          <div className="absolute top-1 -left-[8px] h-5 w-[3px] rounded-r-sm bg-orange-500" />
+          ParkX Analytics
+          <div className="absolute top-1 -left-[8px] h-5 w-[3px] rounded-r-sm bg-green-500" />
         </h2>
         <p className="mt-2 max-w-lg text-3xl font-semibold tracking-tighter text-balance text-gray-900 md:text-4xl">
-          Turn field data into profitable harvests with real-time insights
+          Turn parking data into revenue with real-time insights
         </p>
       </div>
       <div className="*:pointer-events-none">
@@ -33,23 +33,23 @@ export function SolarAnalytics() {
       <div className="grid grid-cols-1 grid-rows-2 gap-6 md:grid-cols-4 md:grid-rows-1">
         <StickerCard
           Icon={RiNavigationFill}
-          title="Autonomous Navigation"
-          description="Smart tractors that navigate fields independently using GPS."
+          title="Live Spot Tracking"
+          description="Real-time occupancy updates from sensors across every parking zone."
         />
         <StickerCard
           Icon={RiRobot3Fill}
-          title="Robotic Harvesting"
-          description="AI-powered robots that identify and harvest crops at optimal ripeness."
+          title="Plate Recognition"
+          description="AI-powered ANPR cameras identify vehicles at entry and exit automatically."
         />
         <StickerCard
           Icon={RiDropFill}
-          title="Smart Irrigation"
-          description="Automated irrigation systems that optimize water usage."
+          title="Online Payments"
+          description="Seamless digital payments with auto-billing on exit. No kiosk needed."
         />
         <StickerCard
           Icon={RiPieChartFill}
-          title="Yield Analytics"
-          description="Advanced analytics platform that predicts crop yields."
+          title="Revenue Analytics"
+          description="Advanced dashboard tracking occupancy rates, peak hours, and earnings."
         />
       </div>
     </section>

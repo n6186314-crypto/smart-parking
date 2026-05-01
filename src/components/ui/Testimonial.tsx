@@ -2,35 +2,30 @@ import Image from "next/image"
 
 export default function Testimonial() {
   return (
-    <section className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl shadow-2xl shadow-[#366A79]/70">
+    <section className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl shadow-2xl shadow-[#1a9e5c]/40">
       <div className="absolute inset-0 object-cover">
+        {/* Aerial parking lot at night — free image via Unsplash */}
         <Image
-          alt="clouds background"
-          src="/images/field.png"
+          alt="Modern parking facility at night"
+          src="https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=1400&q=80"
           fill
           className="object-cover"
+          priority
         />
-      </div>
-      <div className="absolute top-76 -right-14 w-76 sm:top-48 sm:right-3 sm:w-92 md:top-48 md:right-0 md:w-100 lg:top-64 lg:right-12 lg:w-136">
-        <Image
-          alt="clouds background"
-          src="/images/drone.png"
-          width={1583}
-          height={554}
-          className="animate-hover"
-        />
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-black/30" />
       </div>
       <div className="relative z-20 mb-20 p-8 sm:p-14 lg:p-24">
         <div className="">
-          <blockquote className="relative max-w-2xl text-xl leading-relaxed tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
-            <p className="before:absolute before:top-0 before:right-full before:content-['“'] after:text-gray-900/70 after:content-['”']">
-              <strong className="font-semibold">
-                Solar transformed our environmental monitoring capabilities.
+          <blockquote className="relative max-w-2xl text-xl leading-relaxed tracking-tight text-white md:text-2xl lg:text-3xl">
+            <p>
+              <strong className="font-semibold text-white">
+                ParkX completely transformed how we manage our parking facility.
               </strong>{" "}
-              <span className="text-gray-900/70">
-                Their autonomous network provides real-time data on forest
-                health, wildlife patterns, and ecosystem changes with
-                unprecedented precision and efficiency.
+              <span className="text-white/70">
+                Real-time occupancy data, automated payments, and license plate
+                recognition cut our operational costs by 40% in the first
+                quarter alone.
               </span>
             </p>
           </blockquote>
@@ -38,7 +33,7 @@ export default function Testimonial() {
         <div className="mt-14 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <div className="relative shrink-0 rounded-full bg-white/15 p-0.5 ring-1 ring-white/20">
             <Image
-              alt="Dr. Sarah Miller"
+              alt="Sarah Miller"
               src="/images/smiller.jpeg"
               width={56}
               height={56}
@@ -46,11 +41,9 @@ export default function Testimonial() {
             />
           </div>
           <div>
-            <div className="text-base font-medium text-gray-900">
-              Dr. Sarah Miller
-            </div>
-            <div className="text-sm text-[#C33621]/80">
-              Director of Conservation Technologies
+            <div className="text-base font-medium text-white">Sarah Miller</div>
+            <div className="text-sm text-white/60">
+              Head of Operations, CityPark Group
             </div>
           </div>
         </div>

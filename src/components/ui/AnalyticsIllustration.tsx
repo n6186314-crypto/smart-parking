@@ -11,36 +11,36 @@ import {
 
 const summary = [
   {
-    name: "North Field Corn",
-    value: "21,349 bu",
-    planted: "19,000 bu",
-    water: "14,033 gal",
-    yield: "+11.2%",
-    efficiency: "+7.8%",
-    nutrients: "+4.9%",
-    bgColor: "bg-amber-500",
+    name: "Zone A - Level 1",
+    value: "142 cars",
+    capacity: "150 spots",
+    revenue: "$2,840",
+    occupancy: "+94.6%",
+    efficiency: "+8.2%",
+    turnover: "+5.1%",
+    bgColor: "bg-green-500",
     changeType: "positive",
   },
   {
-    name: "West Field Soybeans",
-    value: "25,943 bu",
-    planted: "23,600 bu",
-    water: "11,033 gal",
-    yield: "+3.1%",
-    efficiency: "+5.6%",
-    nutrients: "+2.9%",
+    name: "Zone B - Level 2",
+    value: "98 cars",
+    capacity: "120 spots",
+    revenue: "$1,960",
+    occupancy: "+81.6%",
+    efficiency: "+6.4%",
+    turnover: "+3.2%",
     bgColor: "bg-emerald-500",
     changeType: "positive",
   },
   {
-    name: "South Field Wheat",
-    value: "9,443 bu",
-    planted: "14,600 bu",
-    water: "2,033 gal",
-    yield: "-5.1%",
-    efficiency: "-6.3%",
-    nutrients: "-9.9%",
-    bgColor: "bg-yellow-400",
+    name: "Zone C - Rooftop",
+    value: "31 cars",
+    capacity: "80 spots",
+    revenue: "$620",
+    occupancy: "-38.7%",
+    efficiency: "-12.1%",
+    turnover: "-8.3%",
+    bgColor: "bg-green-400",
     changeType: "negative",
   },
 ]
@@ -49,13 +49,13 @@ export default function FieldPerformance() {
   return (
     <div className="h-150 shrink-0 overflow-hidden mask-[radial-gradient(white_30%,transparent_90%)] perspective-[4000px] perspective-origin-center">
       <div className="-translate-y-10 -translate-z-10 rotate-x-10 rotate-y-20 -rotate-z-10 transform-3d">
-        <h3 className="text-sm text-gray-500">Field Yield Performance</h3>
+        <h3 className="text-sm text-gray-500">Parking Occupancy Performance</h3>
         <p className="mt-1 text-3xl font-semibold text-gray-900">
-          32,227 bushels
+          271 vehicles parked
         </p>
         <p className="mt-1 text-sm font-medium">
-          <span className="text-emerald-700">+430 bushels (4.1%)</span>{" "}
-          <span className="font-normal text-gray-500">Past growing season</span>
+          <span className="text-emerald-700">+24 vehicles (9.7%)</span>{" "}
+          <span className="font-normal text-gray-500">vs last week</span>
         </p>
         <LineChartIllustration className="mt-8 w-full min-w-200 shrink-0" />
 
@@ -63,22 +63,24 @@ export default function FieldPerformance() {
           <Table>
             <TableHead>
               <TableRow>
-                <TableHeaderCell>Field</TableHeaderCell>
-                <TableHeaderCell className="text-right">Yield</TableHeaderCell>
+                <TableHeaderCell>Zone</TableHeaderCell>
                 <TableHeaderCell className="text-right">
-                  Expected
+                  Vehicles
                 </TableHeaderCell>
                 <TableHeaderCell className="text-right">
-                  Water Used
+                  Capacity
                 </TableHeaderCell>
                 <TableHeaderCell className="text-right">
-                  Yield Diff
+                  Revenue
+                </TableHeaderCell>
+                <TableHeaderCell className="text-right">
+                  Occupancy
                 </TableHeaderCell>
                 <TableHeaderCell className="text-right">
                   Efficiency
                 </TableHeaderCell>
                 <TableHeaderCell className="text-right">
-                  Nutrients
+                  Turnover
                 </TableHeaderCell>
               </TableRow>
             </TableHead>
@@ -95,8 +97,8 @@ export default function FieldPerformance() {
                     </div>
                   </TableCell>
                   <TableCell className="text-right">{item.value}</TableCell>
-                  <TableCell className="text-right">{item.planted}</TableCell>
-                  <TableCell className="text-right">{item.water}</TableCell>
+                  <TableCell className="text-right">{item.capacity}</TableCell>
+                  <TableCell className="text-right">{item.revenue}</TableCell>
                   <TableCell className="text-right">
                     <span
                       className={
@@ -105,7 +107,7 @@ export default function FieldPerformance() {
                           : "text-red-700"
                       }
                     >
-                      {item.yield}
+                      {item.occupancy}
                     </span>
                   </TableCell>
                   <TableCell className="text-right">
@@ -127,7 +129,7 @@ export default function FieldPerformance() {
                           : "text-red-700"
                       }
                     >
-                      {item.nutrients}
+                      {item.turnover}
                     </span>
                   </TableCell>
                 </TableRow>

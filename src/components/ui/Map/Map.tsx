@@ -1,19 +1,20 @@
-import { Icons } from "@/components/Icons"
 import {
-  RiHome9Fill,
-  RiPlaneLine,
+  RiBarricadeFill,
+  RiCameraFill,
+  RiCarFill,
+  RiChargingPile2Fill,
   RiSignalTowerFill,
-  RiTruckFill,
 } from "@remixicon/react"
 import { SVGMap } from "./SVGMap"
 
 export const Map = () => {
   return (
     <section
-      id="farm-management"
+      id="parking-management"
       aria-labelledby="management-title"
       className="relative flex w-full max-w-6xl scroll-my-24 flex-col items-center justify-center overflow-hidden rounded-2xl bg-gray-950 px-10 shadow-2xl shadow-black/50 sm:px-16 md:px-28 lg:mx-auto"
     >
+      {/* Left edge decoration */}
       <div className="absolute left-0 z-10 h-full backdrop-blur-[2px]">
         <svg
           className="h-full w-8 border-r border-zinc-900 stroke-zinc-800 sm:w-20"
@@ -49,6 +50,8 @@ export const Map = () => {
           />
         </svg>
       </div>
+
+      {/* Right edge decoration */}
       <div className="absolute right-0 z-10 h-full backdrop-blur-[2px]">
         <svg
           className="h-full w-8 border-r border-zinc-900 stroke-zinc-800 sm:w-20"
@@ -59,7 +62,7 @@ export const Map = () => {
         >
           <defs>
             <pattern
-              id="diagonal-border-pattern"
+              id="diagonal-border-pattern-r"
               patternUnits="userSpaceOnUse"
               width="64"
               height="64"
@@ -80,92 +83,100 @@ export const Map = () => {
           <rect
             width="100%"
             height="100%"
-            fill="url(#diagonal-border-pattern)"
+            fill="url(#diagonal-border-pattern-r)"
           />
         </svg>
       </div>
 
-      <div className="pt-12 text-base font-semibold tracking-tight text-orange-400 sm:pt-20 sm:text-lg">
-        Farm Management
+      {/* Section heading */}
+      <div className="pt-12 text-base font-semibold tracking-tight text-green-400 sm:pt-20 sm:text-lg">
+        Parking Management
       </div>
       <h2
         id="management-title"
         className="mt-6 max-w-[700px] text-center text-2xl font-semibold tracking-tight text-balance text-white md:text-5xl"
       >
-        Monitoring & Control for Precision Agriculture
+        Monitoring & Control for Every Parking Zone
       </h2>
       <p className="mt-4 max-w-2xl text-center text-base text-balance text-gray-400 sm:mt-8 sm:text-xl">
-        Complete oversight of your farming operations across fields, irrigation
-        systems, and aerial monitoring, delivering insights even in remote rural
-        locations.
+        Complete visibility of your parking facility across all levels, entry
+        gates, and payment terminals — delivering real-time insights from
+        anywhere.
       </p>
 
+      {/* Map with overlaid parking device icons */}
       <div className="relative mt-20 mb-10 ml-68 scale-90 sm:mb-16 md:mt-24 md:ml-0 md:scale-100">
         <SVGMap className="w-200 shrink-0" />
+
+        {/* Entry Camera — top left */}
         <div className="absolute -top-3 left-[130px]">
           <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Scanning
+            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15" />
+            <div className="absolute -top-4 -right-[4.5rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
+              Entry Cam
             </div>
-            <RiPlaneLine className="relative size-5 rotate-90 text-white" />
+            <RiCameraFill className="relative size-5 text-white" />
             <div
-              style={{
-                animationDelay: "3.5s",
-              }}
-              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-orange-500/50"
-            ></div>
+              style={{ animationDelay: "0s" }}
+              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-green-500/50"
+            />
           </div>
         </div>
+
+        {/* Barrier Gate — mid left */}
         <div className="absolute top-[73px] left-[243px]">
           <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Irrigating
+            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15" />
+            <div className="absolute -top-4 -right-[4rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
+              Gate Open
             </div>
-            <Icons.QuadCopter className="relative size-5 rotate-90 text-white" />
+            <RiBarricadeFill className="relative size-5 text-white" />
             <div
-              style={{
-                animationDelay: "3.5s",
-              }}
-              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-orange-500/50"
-            ></div>
+              style={{ animationDelay: "1.5s" }}
+              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-green-500/50"
+            />
           </div>
         </div>
+
+        {/* Exit Camera — mid right */}
         <div className="absolute top-32 right-[300px]">
           <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-[3.7rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Scanning
+            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15" />
+            <div className="absolute -top-4 -right-[4.5rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
+              Exit Cam
             </div>
-            <RiPlaneLine className="relative size-5 rotate-90 text-white" />
+            <RiCameraFill className="relative size-5 text-white" />
             <div
-              style={{
-                animationDelay: "3.5s",
-              }}
-              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-orange-500/50"
-            ></div>
+              style={{ animationDelay: "3s" }}
+              className="absolute size-10 animate-[ping_5s_ease_infinite] rounded-full ring-1 ring-green-500/50"
+            />
           </div>
         </div>
+
+        {/* Parked Car — center */}
         <div className="absolute top-20 right-[390px]">
           <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <RiHome9Fill className="relative size-5 text-white" />
+            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15" />
+            <RiCarFill className="relative size-5 text-white" />
           </div>
         </div>
+
+        {/* EV Charger — upper center */}
         <div className="absolute top-12 right-[430px]">
           <div className="relative flex items-center justify-center">
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15"></div>
-            <div className="absolute -top-4 -right-7 flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
-              Idle
+            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15" />
+            <div className="absolute -top-4 -right-[3.5rem] flex w-fit items-center justify-center rounded-full bg-gray-950 px-1.5 py-0.5 text-xs whitespace-nowrap text-white ring-1 ring-white/15">
+              EV Charging
             </div>
-            <RiTruckFill className="relative size-5 text-white" />
+            <RiChargingPile2Fill className="relative size-5 text-white" />
           </div>
         </div>
+
+        {/* Signal Tower — far right */}
         <div className="absolute top-9 right-56">
           <div className="relative flex items-center justify-center">
             <RiSignalTowerFill className="z-10 size-5 text-white" />
-            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15 backdrop-blur-sm"></div>
+            <div className="absolute size-10 rounded-full bg-gray-950 ring-1 ring-white/15 backdrop-blur-sm" />
           </div>
         </div>
       </div>

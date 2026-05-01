@@ -5,7 +5,6 @@ import {
   RiYoutubeFill,
 } from "@remixicon/react"
 import Link from "next/link"
-import { SolarLogo } from "../../../public/SolarLogo"
 const CURRENT_YEAR = new Date().getFullYear()
 
 const Footer = () => {
@@ -13,13 +12,13 @@ const Footer = () => {
     solutions: {
       title: "Solutions",
       items: [
-        { label: "Crop Monitoring", href: "#" },
-        { label: "Irrigation Control", href: "#" },
-        { label: "Soil Analytics", href: "#" },
-        { label: "Weather Integration", href: "#" },
+        { label: "Spot Availability", href: "#" },
+        { label: "Online Reservations", href: "#" },
+        { label: "Plate Recognition", href: "#" },
+        { label: "EV Charging Zones", href: "#" },
         { label: "Documentation", href: "#" },
-        { label: "Smart Farming Guide", href: "#" },
-        { label: "Equipment", href: "#" },
+        { label: "API Access", href: "#" },
+        { label: "Hardware Setup", href: "#" },
       ],
     },
     company: {
@@ -29,13 +28,13 @@ const Footer = () => {
         { label: "Blog", href: "#" },
         { label: "Careers", href: "#" },
         { label: "Success Stories", href: "#" },
-        { label: "Sustainability", href: "#" },
+        { label: "Press", href: "#" },
       ],
     },
     resources: {
       title: "Resources",
       items: [
-        { label: "Farmer Network", href: "#" },
+        { label: "Help Center", href: "#" },
         {
           label: "Community",
           href: "#",
@@ -51,9 +50,9 @@ const Footer = () => {
     partners: {
       title: "Partners",
       items: [
-        { label: "Dealer Network", href: "#", external: true },
+        { label: "Operator Network", href: "#", external: true },
         { label: "System Status", href: "#", external: true },
-        { label: "Research Partners", href: "#", external: true },
+        { label: "City Partnerships", href: "#", external: true },
         { label: "Integration Guide", href: "#" },
       ],
     },
@@ -146,9 +145,10 @@ const Footer = () => {
             href="/"
             className="flex items-center font-medium text-gray-700 select-none sm:text-sm"
           >
-            <SolarLogo className="ml-2 w-20" />
-
-            <span className="sr-only">Solar Logo (go home)</span>
+            <span className="ml-2 text-xl font-bold tracking-tight text-gray-900">
+              Park<span className="text-green-500">X</span>
+            </span>
+            <span className="sr-only">ParkX Logo (go home)</span>
           </Link>
 
           <div>
@@ -188,7 +188,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className="ml-2 hidden text-sm text-gray-700 lg:inline">
-              &copy; {CURRENT_YEAR} Solar Technologies, Inc.
+              &copy; {CURRENT_YEAR} ParkX, Inc.
             </div>
           </div>
         </div>
